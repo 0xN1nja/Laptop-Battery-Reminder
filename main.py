@@ -8,8 +8,11 @@ while True:
         notify(BATTERY_REMINDER_PERCENT,secs_left=battery.secsleft,event="battery-low")
         time.sleep(60)
     if battery.power_plugged:
-        notify(battery.percent,"plugged-in")
+        notify(battery.percent,"plugged-in",secs_left=battery.secsleft)
         time.sleep(60)
     if str(battery.percent) == "100":
-        notify(battery.percent,event="fully-charged")
+        notify(battery.percent,event="fully-charged",secs_left=battery.secsleft)
+        time.sleep(60)
+    if str(battery.percent) == "9":
+        notify(battery.percent,event="critically-low",secs_left=battery.secsleft)
         time.sleep(60)
