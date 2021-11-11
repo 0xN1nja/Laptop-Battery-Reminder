@@ -1,5 +1,5 @@
 from discord_webhooks import DiscordWebhooks
-WEBHOOK_URL="https://discord.com/api/webhooks/908245291973619763/2eAqA-MZqCrq9hAgUUnJtFcvF6knT3H4fHJLrIzMlVICO_SKg-AQ5_4hp3tdYwdJNcTe"
+WEBHOOK_URL=""
 def notify(battery_percentage,event=None,secs_left=0):
     webhook=DiscordWebhooks(WEBHOOK_URL)
     webhook.set_footer(text="--Abhimanyu Sharma")
