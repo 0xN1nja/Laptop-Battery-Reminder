@@ -9,3 +9,6 @@ while True:
     if battery.power_plugged:
         notify(battery.percent,"plugged-in")
         break
+    if str(battery.percent) == "100":
+        notify(battery.percent,event="fully-charged")
+        break
