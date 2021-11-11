@@ -5,7 +5,7 @@ BATTERY_REMINDER_PERCENT="19"
 while True:
     battery=psutil.sensors_battery()
     if int(battery.percent) <= int(BATTERY_REMINDER_PERCENT) and battery.power_plugged == False:
-        notify(BATTERY_REMINDER_PERCENT,secs_left=battery.secsleft,event="battery-low")
+        notify(battery.percent,secs_left=battery.secsleft,event="battery-low")
         time.sleep(60)
     if battery.power_plugged:
         notify(battery.percent,"plugged-in",secs_left=battery.secsleft)
